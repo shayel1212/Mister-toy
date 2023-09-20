@@ -1,7 +1,8 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import { ToyIndex } from "./pages/ToyIndex";
 import { store } from "./store/store";
 import { Provider } from "react-redux";
+import { ToyIndex } from "./pages/ToyIndex";
+import { ToyDetails } from "./pages/ToyDetails";
 export function App() {
   return (
     <Provider store={store}>
@@ -10,6 +11,7 @@ export function App() {
           <main>
             <Routes>
               <Route path="/" element={<ToyIndex />} />
+              <Route path="/:toyId" element={<ToyDetails />} />
             </Routes>
           </main>
         </section>

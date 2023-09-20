@@ -1,10 +1,16 @@
 import { ToyPreview } from "./ToyPreview";
-export function ToyList({ toys }) {
-  console.log(toys);
+export function ToyList({ toys, onRemoveToy, onEditToy }) {
   return (
     <ul>
       {toys.map((toy) => {
-        return <ToyPreview key={toy._id} toy={toy} />;
+        return (
+          <ToyPreview
+            onEditToy={onEditToy}
+            key={toy._id}
+            onRemoveToy={onRemoveToy}
+            toy={toy}
+          />
+        );
       })}
     </ul>
   );
